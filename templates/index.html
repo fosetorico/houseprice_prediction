@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>California Housing Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <br><br><br><br>
+    <h1><a href="https://github.com/fosetorico/houseprice_prediction" target="_blank" style="padding: 10px; background-color:  #DCAE96; font-size: 20px;border: 5px solid #444040; border-radius: 5px; color: black; text-decoration: none; font-weight: bold;">
+        GitHub Repository Link</a></h1>
+    <h1>California Housing Price Prediction</h1>
+    <div class="form-box">
+        <form action="{{url_for('predict_datapoint')}}" method="POST">
+            <div class="form-group">
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" placeholder="Enter Longitudunal Value (Float)">
+            </div>
+        
+            <div class="form-group">
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Enter Latitudunal Value (Float)">
+            </div>
+
+            <div class="form-group">  
+                <label for="housing_median_age">Housing Median Age:</label>
+                <input type="text" id="housing_median_age" name="housing_median_age" placeholder="Enter Housing Median Age">
+            </div>
+            
+            <div class="form-group">
+                <label for="total_rooms">Total Number of rooms:</label>
+                <input type="text" id="total_rooms" name="total_rooms" placeholder="Enter Total Number of Rooms">
+            </div>
+        
+            <div class="form-group">
+                <label for="total_bedrooms">Total Number of Bedrooms:</label>
+                <input type="text" id="total_bedrooms" name="total_bedrooms" placeholder="Enter Total Number of Bedrooms">
+            </div>
+            
+            <div class="form-group">
+                <label for="population">Population:</label>
+                <input type="text" id="population" name="population" placeholder="Enter Population Figure">
+            </div>   
+            
+            <div class="form-group">
+                <label for="households">Households:</label>
+                <input type="text" id="households" name="households" placeholder="Enter Total Number of Households">
+            </div>
+
+            <div class="form-group">
+                <label for="median_income">Median Income:</label>
+                <input type="text" id="median_income" name="median_income" placeholder="Enter Median Income (Float)">
+            </div> 
+        
+            <div class="form-group">
+            <label for="ocean_proximity">Ocean Proximity:</label>
+            <select id="ocean_proximity" name="ocean_proximity">
+                <option value="NEAR BAY">NEAR BAY</option>
+                <option value="&lt;1H OCEAN">Less than 1 hour from the Ocean</option>
+                <option value="INLAND">INLAND</option>
+                <option value="NEAR OCEAN">NEAR OCEAN</option>
+                <option value="ISLAND">ISLAND</option>
+            </select>
+            </div>
+        
+            <div style="clear:both;"></div>&nbsp;
+            <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+        </form>
+
+        <div>      
+            <h2>
+            Predicted Housing Price is : {{ results }}
+            </h2>
+        </div>        
+    </div>
+
+  </body>
+</html>
