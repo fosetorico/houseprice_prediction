@@ -7,3 +7,5 @@ catboost
 xgboost
 dill
 flask
+
+# -e . # autmatically trigger setup.py
