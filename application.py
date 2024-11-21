@@ -6,6 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import sys
 import os
 
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
@@ -69,6 +70,7 @@ def predict_api():
 if __name__=="__main__":
     # app.run(host="0.0.0.0", debug=True) 
     app.run(host="0.0.0.0") 
+    
 
 
 
